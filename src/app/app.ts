@@ -10,6 +10,9 @@ import { Place } from './places/place';
 })
 export class App {
 
+  linkTg = 'https://t.me/Imaginatiolen'
+  linkPs = 'https://ru.pinterest.com/'
+
   public places: Place[] = [
     {
       "name": "Aegean Hideaway",
@@ -854,5 +857,11 @@ export class App {
       "isPublished": true
     }
   ]
+
+  openedPlaceName: string | null = null;
+
+  togglePlace(name: string): void {
+    this.openedPlaceName = this.openedPlaceName === name ? null : name;
+  }
 
 }
