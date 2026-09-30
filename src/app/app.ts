@@ -864,4 +864,14 @@ export class App {
     this.openedPlaceName = this.openedPlaceName === name ? null : name;
   }
 
+  categoryNames: Record<string, string> = {
+    hotel: 'Отель',
+    restaurant: 'Ресторан',
+    spa: 'СПА и релакс',
+    entertainment: 'Развлечения',
+    nature: 'Природа',
+    culture: 'Культура',
+    architecture: 'Архитектура',
+  };
+
 }

@@ -79,6 +79,11 @@
   background: #FFFFFF;
   border: 1px solid #E0E0E0;
   border-radius: 16px;
+  transition: box-shadow 0.2s ease;
+}
+
+.places__item:hover {
+  box-shadow: 0 8px 24px rgba(34, 39, 39, 0.12);
 }
 
 .card {
@@ -231,6 +236,47 @@
   text-decoration: none;
   padding: 0 0 0.5px 0;
   border-bottom: 2px solid #BB863F;
+}
+
+@media screen and (max-width: 1024px) {
+  .places__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .places__item {
+    max-width: none;
+    margin: 0 auto;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .main__title {
+    font-size: 44px;
+  }
+  .main__text {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .places__container {
+    padding: 135px 12px 100px 12px;
+  }
+
+  .places__list {
+    grid-template-columns: 1fr;
+  }
+
+  .main__title {
+    font-size: 32px;
+  }
+  .main__text {
+    font-size: 18px;
+  }
 }
 
 

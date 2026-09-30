@@ -74,3 +74,9 @@ button {
   margin: 0 auto;
   padding: 0 20px;
 }
+
+@media screen and (max-width: 640px) {
+  .container {
+    padding: 0 12px;
+  }
+}
