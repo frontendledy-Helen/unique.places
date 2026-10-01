@@ -37,7 +37,7 @@
       <div class="places__list">
         @for (place of places; track place.name) {
 
-          <div class="places__item">
+          <div class="places__item" [class.places__item--opened]="isPlaceOpened(place.name)">
             <article class="card">
               <div class="card__image">
                 <img src="{{ place.imageUrl }}" alt="Фото {{ place.name }}">
@@ -72,11 +72,17 @@
                   }
                 </div>
                 <p class="card__text">
-                  {{ openedPlaceName === place.name ? place.description : place.shortDescription }}
+                  {{ isPlaceOpened(place.name) ? place.description : place.shortDescription }}
                 </p>
+
                 <button type="button" class="card__more" (click)="togglePlace(place.name)">
-                  {{ openedPlaceName === place.name ? 'Скрыть' : 'Подробнее' }}
+                  @if( isPlaceOpened(place.name) ) {
+                    Скрыть
+                  } @else {
+                    Подробнее
+                  }
                 </button>
+
               </div>
             </article>
           </div>
